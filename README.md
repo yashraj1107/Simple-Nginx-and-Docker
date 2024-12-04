@@ -1,28 +1,24 @@
-### This is a project accompanying Nginx Crash Course
-
-### Commands used in the tutorial
-
-##### start nginx
+start nginx
 `nginx`
 
-##### get options
+get options
 `nginx -h`
 
-##### restart nginx
+restart nginx
 `nginx -s reload`
 
-##### stop nginx
+stop nginx
 `nginx -s stop`  
 
-##### print logs
+print logs
 `tail -f /usr/local/var/log/nginx/access.log`
 
-##### restart nginx
+restart nginx
 `nginx -s reload`
 
-##### create folder for nginx certificates
+create folder for nginx certificates
 `mkdir ~/nginx-certs`
 `cd ~/nginx-certs`
 
-##### create self-signed certificate
+create self-signed certificate
 `openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout nginx-selfsigned.key -out nginx-selfsigned.crt`
