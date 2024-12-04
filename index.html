@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Developer Portfolio</title>
+    <!-- AOS Library -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(120deg, #1e3c72, #2a5298);
+            color: white;
+            overflow-x: hidden;
+        }
+        h1, h2, h3 {
+            margin: 0;
+        }
+        p {
+            line-height: 1.8;
+            margin: 10px 0;
+        }
+        a {
+            color: #1e88e5;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #90caf9;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 25px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        header h1 {
+            font-size: 3.5rem;
+            opacity: 0; /* Ensure initial opacity is set for animation */
+        }
+        header p {
+            margin-top: 10px;
+            font-size: 1.5rem;
+            opacity: 0; /* Ensure initial opacity is set for animation */
+        }
+
+        /* About Section */
+        .section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .about img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin-right: 20px;
+            transform: scale(0);
+        }
+        .about-text {
+            flex: 1;
+            opacity: 0;
+        }
+        .about-text h2 {
+            color: #64ffda;
+        }
+
+        /* Skills Section */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            opacity: 0;
+        }
+        .skill {
+            flex: 1 1 calc(30% - 20px);
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .skill:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>John Doe</h1>
+        <p>Software Developer | Problem Solver | Tech Enthusiast</p>
+    </header>
+
+    <section class="section" data-aos="fade-up">
+        <div class="about">
+            <img src="https://via.placeholder.com/220" alt="John Doe">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>
+                    Hello! I'm John Doe, a software developer with 5+ years of experience in building web applications. 
+                    I love solving challenging problems and creating efficient, scalable solutions. I specialize in 
+                    technologies like JavaScript, Python, React, and Node.js.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" data-aos="fade-right">
+        <h2 style="text-align: center; color: #64ffda;">Skills</h2>
+        <div class="skills">
+            <div class="skill" data-aos="zoom-in">
+                <h3>Frontend</h3>
+                <p>React, Vue, HTML, CSS, JavaScript</p>
+            </div>
+            <div class="skill" data-aos="zoom-in" data-aos-delay="200">
+                <h3>Backend</h3>
+                <p>Node.js, Python, Django, Express</p>
+            </div>
+            <div class="skill" data-aos="zoom-in" data-aos-delay="400">
+                <h3>Tools</h3>
+                <p>Git, Docker, AWS, Jenkins</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 John Doe | Built with ❤️</p>
+    </footer>
+
+    <!-- GSAP and AOS Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // AOS Initialization
+        AOS.init({
+            duration: 1200,
+            once: true
+        });
+
+        // GSAP Animations
+        const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
+        tl.to("header h1", { opacity: 1, y: 0, duration: 0.6 })
+          .to("header p", { opacity: 1, y: 0, duration: 0.5 }, "-=1")
+          .to(".about img", { scale: 1, duration: 0.5, ease: "elastic.out(1, 0.5)" })
+          .to(".about-text", { opacity: 1, x: 0, duration: 0.5 }, "-=1")
+          .to(".skills", { opacity: 1, y: 0, stagger: 0.3, duration: 1.5 });
+    </script>
+</body>
+</html>
