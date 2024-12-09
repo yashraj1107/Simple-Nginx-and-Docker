@@ -12,6 +12,7 @@ app.use('/', (req, res) => {
     console.log(`Request served by ${appName}`);
 });
 
+
 app.listen(port, () => {
     console.log(`${appName} is listening on port ${port}`);
 });

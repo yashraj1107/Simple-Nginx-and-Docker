@@ -7,6 +7,7 @@ get options
 restart nginx
 `nginx -s reload`
 
+
 stop nginx
 `nginx -s stop`  
 
